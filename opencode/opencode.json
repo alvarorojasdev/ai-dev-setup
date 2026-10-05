@@ -1,0 +1,64 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "~/.config/opencode/rules/*.md",
+    "~/.config/opencode/memoria/MEMORY.md"
+  ],
+  "permission": {
+    "edit": "ask",
+    "bash": {
+      "*": "ask",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git show*": "allow",
+      "git branch*": "allow",
+      "ls *": "allow",
+      "cat *": "allow",
+      "grep *": "allow",
+      "rg *": "allow",
+      "find *": "allow",
+      "wc *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "rm *": "ask",
+      "git push*": "ask",
+      "git reset*": "ask",
+      "git checkout -- *": "ask",
+      "git clean*": "ask",
+      "npm publish*": "ask"
+    },
+    "external_directory": "ask"
+  },
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "~/.config/opencode/bin/chrome-devtools-mcp.sh"
+      ],
+      "enabled": false
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": false
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": false
+    }
+  },
+  "model": "opencode/space-bunny-free",
+  "share": "disabled",
+  "small_model": "opencode/space-bunny-free",
+  "autoupdate": "notify",
+  "compaction": {
+    "auto": true,
+    "prune": true
+  }
+}
